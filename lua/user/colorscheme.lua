@@ -1,11 +1,15 @@
 local M = {
-  "LunarVim/darkplus.nvim",
-  lazy = false, -- make sure we load this during startup if it is your main colorscheme
-  priority = 1000, -- make sure to load this before all the other start plugins
+    "catppuccin/nvim",
+    enabled = true,
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("user.catppuccin").config()
+    end,
 }
 
 function M.config()
-  vim.cmd.colorscheme "darkplus"
+  vim.cmd.colorscheme "catppuccin-mocha"
 end
 
 return M
